@@ -237,4 +237,6 @@ class GradCAM:
         return cam.cpu().numpy()
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    from os import environ
+    port = int(environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
